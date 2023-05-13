@@ -24,5 +24,25 @@ public class CurrencyConverter {
 
         scanner.close();
     }
+    private static double convertCurrency(double amount, String currencyFrom) {
+        double convertedAmount = 0.0;
+
+        switch (currencyFrom) {
+            case "USD":
+                convertedAmount = amount;
+                break;
+            case "EUR":
+                convertedAmount = amount / USD_TO_EUR;
+                break;
+            case "GBP":
+                convertedAmount = amount / USD_TO_GBP;
+                break;
+            // Adicione outros casos conforme necessário
+            default:
+                System.out.println("Moeda de origem inválida.");
+        }
+
+        return convertedAmount;
+    }
 
 };

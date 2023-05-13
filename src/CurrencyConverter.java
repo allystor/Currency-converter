@@ -13,10 +13,13 @@ public class CurrencyConverter {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("*****************************************************************************************************");
+        System.out.println("Bem vindo ao conversor de moedas, insira o valor e a moeda de origem para converter o valor em USD!");
+        System.out.println("*****************************************************************************************************");
         System.out.print("Digite a quantidade a ser convertida: ");
         double amount = scanner.nextDouble();
 
-        System.out.print("Digite a moeda de origem (USD, EUR, GBP): ");
+        System.out.print("Digite a moeda de origem (EUR, GBP, BRL, CAD, INR, JPY, CNY, AUD): ");
         String currencyFrom = scanner.next().toUpperCase();
 
         double convertedAmount = convertCurrency(amount, currencyFrom);
@@ -37,7 +40,24 @@ public class CurrencyConverter {
             case "GBP":
                 convertedAmount = amount / USD_TO_GBP;
                 break;
-            // Adicione outros casos conforme necessário
+            case "BRL":
+                convertedAmount = amount / USD_TO_BRL;
+                break;
+            case "CAD":
+                convertedAmount = amount / USD_TO_CAD;
+                break;
+            case "INR":
+                convertedAmount = amount / USD_TO_INR;
+                break;
+            case "JPY":
+                convertedAmount = amount / USD_TO_JPY;
+                break;
+            case "CNY":
+                convertedAmount = amount / USD_TO_CNY;
+                break;
+            case "AUD":
+                convertedAmount = amount / USD_TO_AUD;
+                break;
             default:
                 System.out.println("Moeda de origem inválida.");
         }
